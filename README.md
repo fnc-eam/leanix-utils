@@ -24,16 +24,16 @@ Open the file config.ini and add the following parameters:
 
 You need a Python installation (version 3.x, [download here](https://www.python.org/downloads/)) and the *requests* module (see [installation manual](http://docs.python-requests.org/en/master/user/install/#install)).
 
-#Run LeanIX helpers
+# Run LeanIX helpers
 Make sure that the dedicated config file has been customized as described previously.
 
-##How to use the news feed
+## How to use the news feed
 In order to access the LeanIX API in a browser outside of leanix.net, we need to set up a few things:
 * Option 1: Copy the news feed directory to a web server and ask the LeanIX Support Team to add a CORS whitelist entry for your server hostname.
 * Option 2: Install a browser plugin that disables CORS checks (google: "CORS toggle" or "disable same origin policy")
 * open 'index.html'
 
-##How to use the download script
+## How to use the download script
 There are different ways how to run the script.
 
 __Command Line__: Navigate to the *snapshot* directory. Run the following command
