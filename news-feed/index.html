@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LeanIX News-Feed</title>
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="res/favicon.ico">
+
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+    <link href="css/reportStyle.css" rel="stylesheet">
+
+    <!--SCRIPS-->
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/leanIXQueries.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+
+</head>
+
+<body role="document" onload="getOAuthToken('PROD')">
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Recently Updated LeanIX Fact Sheets</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" role="main">
+
+    <!-- LEANIX WORKSPACE SELECTION BUTTONS -->
+    <div class="form-group">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-success">
+                <input type="radio" name="workspaceOptions" id="trainWorkspace" autocomplete="off"
+                       onchange="getOAuthToken('TRAIN')"> Training Workspace
+            </label>
+            <label class="btn btn-success active">
+                <input type="radio" name="workspaceOptions" id="prodWorkspace" autocomplete="off" checked
+                       onchange="getOAuthToken('PROD')">
+                Production Workspace
+            </label>
+        </div>
+        <button class="btn btn-info" type="button" onclick="copyOAuthToken()">Copy OAuth token to clipboard</button>
+        <input type="text" id="token" style="display:block; height:0; opacity: 0;"><!-- if we use visibility hidden, we cannot copy text -->
+    </div>
+
+    <!-- FILTER FOR FACTSHEET TYPES AND TIME RANGE -->
+    <div class="form-row">
+        <div class="col-md-6">
+            <label for="factSheetTypeSelection">Fact Sheet Type</label>
+            <select id="factSheetTypeSelection" onchange="setFactSheetType(this)"
+                    class="form-control form-control-sm">
+                <option value="All" onchange="setFactSheetType('All')">All fact sheet types</option>
+                <option value="BusinessCapability" onchange="setFactSheetType('BusinessCapability')">Business
+                    Capabilities
+                </option>
+                <option value="Process" onchange="setFactSheetType('Process')">Processes</option>
+                <option value="UserGroup" onchange="setFactSheetType('UserGroup')">User Groups</option>
+                <option value="Project" onchange="setFactSheetType('Project')">Projects</option>
+                <option value="Application" onchange="setFactSheetType('Application')">Applications</option>
+                <option value="Interface" onchange="setFactSheetType('Interface')">Interfaces</option>
+                <option value="DataObject" onchange="setFactSheetType('DataObject')">Data Categories</option>
+                <option value="ITComponent" onchange="setFactSheetType('ITComponent')">IT Components</option>
+                <option value="Provider" onchange="setFactSheetType('Provider')">Provider</option>
+                <option value="TechnicalStack" onchange="setFactSheetType('TechnicalStack')">Technology Domains
+                </option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group" id="datePicker">
+                <label class="control-label" for="date">Display changes from</label>
+                <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" onchange="setDaysDisplay(this.value)"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- horizontal line -->
+<div class="page-header"></div>
+
+<div class="container">
+    <div class="form-group">
+        <input class="form-control" type="text" id="searchInput" onkeyup="searchEntries()"
+               placeholder="Search for entries...">
+        <div>
+            <!-- File is licensed under Creative Commons Attribution-Share Alike 4.0 International, Author: Ahm masum, Date: 15 October 2015 -->
+            <img id="loadingSpinner" src="res/loading_icon.gif" alt="loading" height="50" width="75">
+            <img id="finishedLoading" src="res/tick.png" alt="finished" height="50" width="75" style="display: none">
+            <label class="label label-warning" id="loading"></label>
+        </div>
+        <div id="searchtext">
+            <ul id="factSheets" class="list-group">
+                <!-- factsheets will be added here as soon as they are loaded -->
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

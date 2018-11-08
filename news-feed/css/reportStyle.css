@@ -1,0 +1,95 @@
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+}
+ul {
+    list-style-type: none;
+}
+.shortLabel{
+    font-size:11px;
+    display:inline-block;
+    text-align:center;
+    min-width:20px;
+    padding:3px 0;
+    margin:0 5px;
+    line-height:11px;
+    border-radius:2px;
+}
+.tinyLabel{
+    font-size:9px;
+    font-weight: normal;
+    display:inline-block;
+    text-align:center;
+    min-width:15px;
+    padding:2px 0;
+    margin:0 5px;
+    line-height:9px;
+    border-radius:2px;
+}
+.tag{
+    font-size: 11px;
+    font-weight: normal;
+    white-space: nowrap;
+    margin: 2px;
+    padding: 3px 5px;
+    color: #333;
+    border-radius: 3px;
+    background: #e6e6e6;
+    border-left: 4px solid rgb(216, 216, 216);
+}
+.tag-delete{
+    font-size: 11px;
+    font-weight: normal;
+    text-decoration: line-through;
+    white-space: nowrap;
+    margin: 2px;
+    padding: 3px 5px;
+    color: #333;
+    border-radius: 3px;
+    background: #e6e6e6;
+    border-left: 4px solid rgb(216, 216, 216);
+}
+.Project{
+    background-color: rgb(139, 171, 141);
+    color: rgb(255, 255, 255);
+}
+.Application{
+    background-color: rgb(58, 135, 173);
+    color: rgb(255, 255, 255);
+}
+.ITComponent{
+    background-color: rgb(209, 120, 105);
+    color: rgb(255, 255, 255);
+}
+.TechnicalStack{
+    background-color: rgb(150, 82, 107);
+    color: rgb(255, 255, 255);
+}
+.TechnologyStack{
+    background-color: rgb(150, 82, 107);
+    color: rgb(255, 255, 255);
+}
+.Provider{
+    background-color: rgb(235, 173, 96);
+    color: rgb(255, 255, 255);
+}
+.UserGroup{
+    background-color: rgb(119, 181, 235);
+    color: rgb(255, 255, 255);
+}
+.BusinessCapability{
+    background-color: rgb(53, 69, 103);
+    color: rgb(255, 255, 255);
+}
+.DataObject{
+    background-color: rgb(180, 132, 103);
+    color: rgb(255, 255, 255);
+}
+.Interface{
+    background-color: rgb(69, 181, 208);
+    color: rgb(255, 255, 255);
+}
+.Process{
+    background-color: rgb(226, 107, 164);
+    color: rgb(255, 255, 255);
+}
