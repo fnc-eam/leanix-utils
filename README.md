@@ -1,5 +1,5 @@
 # leanix-utils
-Currently contains the following LeanIX-helpers
+Currently contains the following LeanIX helpers:
 * A __news-feed web page__ providing an overview on the recent changes within your workspace
 * A __script to download__ a full Excel snapshot of a LeanIX workspace as well as the results of all survey runs
 
