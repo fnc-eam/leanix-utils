@@ -1,7 +1,7 @@
 # leanix-utils
 Currently contains the following LeanIX helpers:
-* A __news-feed web page__ providing an overview on the recent changes within your workspace
-* A __script to download__ a full Excel snapshot of a LeanIX workspace as well as the results of all survey runs
+* A __news-feed__ web page providing an overview on the recent changes within your workspace
+* A __snapshot helper__ to download a full Excel snapshot of a LeanIX workspace as well as the results of all survey runs
 
 # Getting started
 Clone the source files to your server or local IDE:
