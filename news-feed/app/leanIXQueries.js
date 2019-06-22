@@ -1,4 +1,4 @@
-﻿var oauth2_token;
+var oauth2_token;
 var factsheets;
 var instance = config_instance
 var base_path = config_basePathLeanIX
@@ -6,7 +6,7 @@ var base_path = config_basePathLeanIX
 // default values
 var environment = "PROD";
 var daysHighlight = 1;
-var daysDisplay = 4;
+var daysDisplay = 2;
 var factSheetTypeValue= "All";
 
 var settings;

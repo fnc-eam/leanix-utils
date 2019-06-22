@@ -77,10 +77,17 @@
             </select>
         </div>
 
-        <div class="col-md-6" style="padding-right:0px;">
+        <div class="col-md-3" style="padding-right:0px;">
             <div class="form-group" id="datePicker">
                 <label class="control-label" for="date">Display Changes After</label>
                 <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" onchange="setDaysDisplay(this.value)"/>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="padding-right:0px;">
+            <div class="form-group" id="userFilterGroup">
+                <label class="control-label" for="userfilter">User Filter</label><br>
+                <input id="userfilter" name="userfilter" type="checkbox" value="TRUE" onchange="window.stop();$('#factSheets').empty();getFactSheets();"/>
             </div>
         </div>
     </div>

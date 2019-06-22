@@ -11,6 +11,10 @@ var config_apiTokenTrain= "abc123...";
 //TODO: your API token for the production workspace (40 characters)
 var config_apiTokenProd= "abc123...";
 
+//TODO: For User Filter: display names of the users you would like to filter out
+var userfilter_list = ["John Doe", "Test User"];
+
+
 
 ///////////////no change necessary, provided by leanIX
 var config_tokenPathLeanIX= "/services/mtm/v1/oauth2/token";
