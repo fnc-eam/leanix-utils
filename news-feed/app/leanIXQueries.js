@@ -5,7 +5,7 @@ var base_path = config_basePathLeanIX
 
 // default values
 var environment = "PROD";
-var daysHighlight = 2;
+var daysHighlight = 1;
 var daysDisplay = 4;
 var factSheetTypeValue= "All";
 

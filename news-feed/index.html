@@ -47,12 +47,16 @@
             </label>
         </div>
         <button class="btn btn-info" type="button" onclick="copyOAuthToken()">Copy OAuth token to clipboard</button>
+            <!-- File is licensed under Creative Commons Attribution-Share Alike 4.0 International, Author: Ahm masum, Date: 15 October 2015 -->
+            <img id="loadingSpinner" src="res/loading_icon.gif" alt="loading" height="50" width="75">
+            <img id="finishedLoading" src="res/tick.png" alt="finished" height="50" width="75" style="display: none">
+            <label class="label label-warning" id="loading"></label>
         <input type="text" id="token" style="display:block; height:0; opacity: 0;"><!-- if we use visibility hidden, we cannot copy text -->
     </div>
 
     <!-- FILTER FOR FACTSHEET TYPES AND TIME RANGE -->
     <div class="form-row">
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-left:0px;">
             <label for="factSheetTypeSelection">Fact Sheet Type</label>
             <select id="factSheetTypeSelection" onchange="setFactSheetType(this)"
                     class="form-control form-control-sm">
@@ -73,28 +77,19 @@
             </select>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-right:0px;">
             <div class="form-group" id="datePicker">
-                <label class="control-label" for="date">Display changes from</label>
+                <label class="control-label" for="date">Display Changes After</label>
                 <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" onchange="setDaysDisplay(this.value)"/>
             </div>
         </div>
     </div>
 </div>
 
-<!-- horizontal line -->
-<div class="page-header"></div>
-
 <div class="container">
     <div class="form-group">
         <input class="form-control" type="text" id="searchInput" onkeyup="searchEntries()"
                placeholder="Search for entries...">
-        <div>
-            <!-- File is licensed under Creative Commons Attribution-Share Alike 4.0 International, Author: Ahm masum, Date: 15 October 2015 -->
-            <img id="loadingSpinner" src="res/loading_icon.gif" alt="loading" height="50" width="75">
-            <img id="finishedLoading" src="res/tick.png" alt="finished" height="50" width="75" style="display: none">
-            <label class="label label-warning" id="loading"></label>
-        </div>
         <div id="searchtext">
             <ul id="factSheets" class="list-group">
                 <!-- factsheets will be added here as soon as they are loaded -->
