@@ -6,12 +6,13 @@ var base_path = config_basePathLeanIX
 // default values
 var environment = "PROD";
 var daysHighlight = 1;
-var daysDisplay = 2;
+var daysDisplay = 5;
 var factSheetTypeValue= "All";
 
 var settings;
 
 var searchstring;
+var userfilter;
 
 // initialize date picker
 $(document).ready(function(){
@@ -46,6 +47,9 @@ function getFactSheets(cursor = ""){
 
     // set parameter for post request
     setSettings(query);
+
+    input = document.getElementById('userfilter');
+    userfilter = input.checked;
 
     //wait for asynchronous response & process received data
     $.ajax(settings).done(function (response) {
@@ -177,7 +181,7 @@ function getLastUpdateDetails(idvalue, cursor = ""){
 
             //match searchstring to factsheet name and log event
             var fsName = $('#'+idvalue).parent().text().toLowerCase();
-            if (searchstring && fsName.indexOf(searchstring.toLowerCase()) == -1 && JSON.stringify(logEvent).indexOf(searchstring.toLowerCase()) == -1 && !idsToShow.includes(idvalue)){
+            if (((searchstring && fsName.indexOf(searchstring.toLowerCase()) == -1 && JSON.stringify(logEvent).indexOf(searchstring.toLowerCase()) == -1) || (userfilter && userfilter_list.indexOf(logEvent["node"]["user"]["displayName"]) != -1)) && !idsToShow.includes(idvalue)){
                 //hide if searchstring is not matching both: factsheet name and content of log event
                 $('#'+idvalue).parent().hide();
             }else{
