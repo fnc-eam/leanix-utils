@@ -93,7 +93,7 @@ function getFactSheets(cursor = ""){
 
             var workspace = environment=="PROD"?config_ws_production:config_ws_training;
             $('#factSheets').append("" +
-                "<li class='list-group-item'><span class='shortLabel " +
+                "<li class='list-group-item'" + (userfilter ? " style='display:none;'": "") + "><span class='shortLabel " +
                 factsheet["node"]["type"] + "'>" + factsheet["node"]["type"][0] +
                 "</span><a href='"+config_instance+"/"+workspace+"/factsheet/"+fsType+"/"+idvalue+"' target='_blank'>" +
                 factsheet["node"]["displayName"] + "</a><ul id='" + idvalue + "'></ul></li>");
