@@ -144,9 +144,7 @@ function getLastUpdateDetails(idvalue, cursor = ""){
             var days = Math.floor((new Date() - createdTime) / (1000 * 60 * 60 * 24));
             var message = logEvent["node"]["message"];
 
-            var factSheetTypes = ["Project", "Application", "ITComponent", "TechnologyStack", "TechnicalStack", "Provider", "UserGroup", "BusinessCapability", "DataObject", "Interface", "Process"];
-
-            $.each(factSheetTypes, function(l, type){
+            $.each(factsheet_types, function(l, type){
                 tinylabel = '<span class=\'tinyLabel ' + type + '\'>'+ type[0] + '</span>';
 
                 regExp = new RegExp("^Relation 'rel.*" + type + "'");

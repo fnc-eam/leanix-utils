@@ -14,6 +14,9 @@ var config_apiTokenProd= "abc123...";
 //TODO: For User Filter: display names of the users you would like to filter out
 var userfilter_list = ["John Doe", "Test User"];
 
+//TODO: Customize your LeanIX fact sheet types
+var factsheet_types = ["Project", "Application", "ITComponent", "TechnologyStack", "TechnicalStack", "Provider",
+"UserGroup", "BusinessCapability", "DataObject", "Interface", "Process"];
 
 
 ///////////////no change necessary, provided by leanIX
