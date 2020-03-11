@@ -2,6 +2,7 @@
 Currently contains the following LeanIX helpers:
 * A __snapshot helper__ to download a full Excel snapshot of a LeanIX workspace as well as the results of all survey runs
 ![Snapshot screenshot](https://github.com/fnc-eam/leanix-utils/blob/master/snapshot.png)
+
 * A __news-feed__ web page providing an overview on the recent changes within your workspace
 ![News feed screenshot](https://github.com/fnc-eam/leanix-utils/blob/master/news-feed.jpg)
 
