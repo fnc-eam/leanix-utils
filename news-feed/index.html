@@ -61,18 +61,6 @@
             <select id="factSheetTypeSelection" onchange="setFactSheetType(this)"
                     class="form-control form-control-sm">
                 <option value="All" onchange="setFactSheetType('All')">All fact sheet types</option>
-                <option value="BusinessCapability" onchange="setFactSheetType('BusinessCapability')">Business
-                    Capabilities
-                </option>
-                <option value="Process" onchange="setFactSheetType('Process')">Processes</option>
-                <option value="UserGroup" onchange="setFactSheetType('UserGroup')">User Groups</option>
-                <option value="Project" onchange="setFactSheetType('Project')">Projects</option>
-                <option value="Application" onchange="setFactSheetType('Application')">Applications</option>
-                <option value="Interface" onchange="setFactSheetType('Interface')">Interfaces</option>
-                <option value="DataObject" onchange="setFactSheetType('DataObject')">Data Categories</option>
-                <option value="ITComponent" onchange="setFactSheetType('ITComponent')">IT Components</option>
-                <option value="Provider" onchange="setFactSheetType('Provider')">Provider</option>
-                <option value="TechnicalStack" onchange="setFactSheetType('TechnicalStack')">Technology Domains
                 </option>
             </select>
         </div>
@@ -104,6 +92,17 @@
         </div>
     </div>
 </div>
+
+<script>
+$.each(factsheet_types, function(l, type){
+$('#factSheetTypeSelection').append($('<option>', {
+    value: type,
+    text: type,
+    onchange: "setFactSheetType('" + type + "')"
+}));
+});
+</script>
+
 </body>
 
 </html>
